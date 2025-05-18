@@ -4,8 +4,13 @@ import boardRoutes from './routes/boardRoute.ts';
 
 const app = express();
 
+const corsOptions = {
+  credentials: true,
+  origin: ['*'],
+};
+
 app.use(express.json());
-app.use(cors());
+app.use(cors(corsOptions));
 
 app.use('/', boardRoutes);
 
