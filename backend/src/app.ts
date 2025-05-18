@@ -6,7 +6,7 @@ const app = express();
 
 const corsOptions = {
   credentials: true,
-  origin: ['*'],
+  origin: 'https://incode-tt-cwjl.vercel.app',
 };
 
 app.use(express.json());
