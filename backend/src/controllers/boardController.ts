@@ -1,4 +1,4 @@
-import * as boardServices from '../services/boardServices.ts';
+import * as boardServices from '../services/boardServices';
 import {  Request, Response } from 'express';
 
 export const getTasks = async (req: Request, res: Response) => {
