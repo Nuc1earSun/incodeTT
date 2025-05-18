@@ -1,0 +1,22 @@
+.searchBar {
+  display: flex;
+  gap: 20px;
+}
+
+.searchBar_input {
+  display: flex;
+  gap: 20px;
+  padding: 12px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  box-sizing: border-box;
+}
+.searchBar_button {
+  background-color: rgb(76, 43, 225);
+  color: #fff;
+}
+.searchBar_button:hover {
+  background-color: rgb(50, 29, 142);
+}

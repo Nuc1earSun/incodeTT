@@ -1,0 +1,17 @@
+.boardInfo {
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.boardInfo_button {
+  background-color: rgb(76, 43, 225);
+  color: #fff;
+}
+.boardInfo_button:hover {
+  background-color: rgb(50, 29, 142);
+}
+.boardInfo_title {
+  margin: 0;
+  font-size: 24px;
+}

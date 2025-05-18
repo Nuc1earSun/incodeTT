@@ -1,0 +1,6 @@
+.columns {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+}

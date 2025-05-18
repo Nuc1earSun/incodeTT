@@ -1,0 +1,33 @@
+.column {
+  margin: 0 10px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+}
+.column_title {
+  margin: 0;
+  font-size: 24px;
+}
+.column_form {
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  box-sizing: border-box;
+}
+.column_form_button {
+  background-color: rgb(76, 43, 225);
+  color: #fff;
+}
+.column_form_button:hover {
+  background-color: rgb(50, 29, 142);
+}
