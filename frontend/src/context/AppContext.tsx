@@ -17,6 +17,8 @@ export const AppContextProvider: React.FC<Props> = ({ children }) => {
   const [activeTask, setActiveTask] = useState<TaskType | null>(null);
   const [activeColumn, setActiveColumn] = useState<ColumnId | null>(null);
 
+  const VITE_REACT_APP_BACKEND_BASEURL = import.meta.env.VITE_REACT_APP_BACKEND_BASEURL;
+
   const controller = new AbortController();
 
   const notify = (message: string) => toast(message);
@@ -32,7 +34,7 @@ export const AppContextProvider: React.FC<Props> = ({ children }) => {
 
   const getTaskById = async (id: string) => {
     try {
-      const response = await axios.get(`http://localhost:3000/boards/${id}`);
+      const response = await axios.get(`${VITE_REACT_APP_BACKEND_BASEURL}/boards/${id}`);
       setTasks(response.data);
       return response.data;
     } catch (error) {
@@ -42,7 +44,7 @@ export const AppContextProvider: React.FC<Props> = ({ children }) => {
   };
   const deleteBoard = async (id: string) => {
     try {
-      await axios.delete(`http://localhost:3000/boards/${id}`);
+      await axios.delete(`${VITE_REACT_APP_BACKEND_BASEURL}/boards/${id}`);
       setBoardId("1");
     } catch (error) {
       console.error(error);
@@ -52,7 +54,7 @@ export const AppContextProvider: React.FC<Props> = ({ children }) => {
   const updateTask = async (task: TaskType, id: string) => {
     try {
       const response = await axios.put(
-        `http://localhost:3000/boards/${id}`,
+        `${VITE_REACT_APP_BACKEND_BASEURL}/boards/${id}`,
         task,
       );
       return response.data;
@@ -63,7 +65,7 @@ export const AppContextProvider: React.FC<Props> = ({ children }) => {
   };
   const deleteTask = async (id: string, boardId: string) => {
     try {
-      await axios.delete(`http://localhost:3000/boards/${boardId}/${id}`);
+      await axios.delete(`${VITE_REACT_APP_BACKEND_BASEURL}/boards/${boardId}/${id}`);
     } catch (error) {
       console.error(error);
       controller.abort();
@@ -72,7 +74,7 @@ export const AppContextProvider: React.FC<Props> = ({ children }) => {
   const createTask = async (task: TaskType) => {
     try {
       const response = await axios.post(
-        `http://localhost:3000/boards/${boardId}/newtask`,
+        `${VITE_REACT_APP_BACKEND_BASEURL}/boards/${boardId}/newtask`,
         task,
       );
       setTasks((prevTasks) => [...prevTasks, response.data]);
